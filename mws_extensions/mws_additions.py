@@ -15,7 +15,7 @@ class InboundShipments(mws.MWS):
 
     @next_token_action('ListInboundShipments')
     def list_inbound_shipments(self, shipment_status_list=None, shipment_id_list=None,
-                               last_updated_after=None, last_updated_before=None):
+                               last_updated_after=None, last_updated_before=None, next_token=None):
         """
         Args:
             shipment_status_list (:obj:`list` of :obj:`ShipmentStatus`):
@@ -36,7 +36,8 @@ class InboundShipments(mws.MWS):
         return self.make_request(data)
 
     @next_token_action('ListInboundShipmentItems')
-    def list_inbound_shipment_items(self, shipment_id=None, last_updated_after=None, last_updated_before=None):
+    def list_inbound_shipment_items(self, shipment_id=None, last_updated_after=None,
+                                    last_updated_before=None, next_token=None):
         """
         Returns a list of items contained in an inbound shipment that you specify with a ShipmentId.
         Alternatively, if you submit the LastUpdatedAfter and LastUpdatedBefore request parameters,
@@ -151,7 +152,7 @@ class OutboundShipments(mws.MWS):
     ]
 
     @next_token_action('ListAllFulfillmentOrders')
-    def list_all_fulfillment_orders(self, query_start_date_time):
+    def list_all_fulfillment_orders(self, query_start_date_time, next_token=None):
         data = dict(Action='ListAllFulfillmentOrders',
                     QueryStartDateTime=query_start_date_time)
         return self.make_request(data, "POST")
