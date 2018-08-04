@@ -152,7 +152,7 @@ class OutboundShipments(mws.MWS):
     ]
 
     @next_token_action('ListAllFulfillmentOrders')
-    def list_all_fulfillment_orders(self, query_start_date_time, next_token=None):
+    def list_all_fulfillment_orders(self, query_start_date_time=None, next_token=None):
         data = dict(Action='ListAllFulfillmentOrders',
                     QueryStartDateTime=query_start_date_time)
         return self.make_request(data, "POST")
