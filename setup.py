@@ -18,7 +18,7 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     install_requires=[
-        'mws==0.8.6'
+        'mws==0.8.6',
         'python-dateutil',
         'lxml',
     ],
