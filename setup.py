@@ -19,6 +19,8 @@ setup(
     ],
     install_requires=[
         'mws==0.8.6'
+        'python-dateutil',
+        'lxml',
     ],
     include_package_data=True,
     zip_safe=False,

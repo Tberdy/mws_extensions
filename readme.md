@@ -5,3 +5,7 @@ It includes some features from forks and some others from
 the deprecated `python-amazon-mws-tools` module.
 
 More infos to come.
+
+## TODO
+
+We need to add unit testing.
